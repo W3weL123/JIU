@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+html {
+  overflow-y: scroll;
+}
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  min-height: 70vh;
+  padding-top: 120px;
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+    url("/images/JIU%20COVER.jpg") center / cover no-repeat;
+  color: white;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.verse {
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.primary {
+  background: #caa65c;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.watch {
+  background: #222;
+}
+
+/* EVENTS */
+.events {
+  background: #111;
+  color: white;
+  padding-top: 40px;
+  margin-top: -20px;
+}
+
+.events h2 {
+  margin-bottom: 30px; /* ✅ SPACE BETWEEN TITLE AND CARDS */
+}
+
+.event-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #222;
+  padding: 30px;
+  width: 250px;
+  border-radius: 8px;
+}
+
+/* FOOTER */
+.footer {
+  background: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}

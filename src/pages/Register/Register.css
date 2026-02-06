@@ -1,0 +1,103 @@
+/* SAME GLOBALS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+/* SAME HERO AS LOGIN */
+.auth-hero {
+  min-height: 100vh;
+  padding-top: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url("/images/JIU%20COVER.jpg") center / cover no-repeat;
+}
+
+/* SAME CARD STYLE */
+.auth-card {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.auth-card h1 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+/* INPUTS & SELECTS */
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* BUTTONS */
+.primary-btn {
+  width: 100%;
+  padding: 12px;
+  background: #caa65c;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.secondary-btn {
+  flex: 1;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #ccc;
+  color: white;
+  cursor: pointer;
+}
+
+.step-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* ERROR */
+.error {
+  color: #ff8080;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+/* BACK LINK */
+.back-home {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.back-home:hover {
+  text-decoration: underline;
+}

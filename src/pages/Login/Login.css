@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* LOGIN HERO */
+.login-hero {
+  min-height: 100vh;
+  padding-top: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url("/images/JIU%20COVER.jpg") center / cover no-repeat;
+}
+
+/* LOGIN CARD */
+.login-card {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+.login-card h1 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.login-subtitle {
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+/* INPUTS */
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* BUTTON */
+.primary-btn {
+  width: 100%;
+  padding: 12px;
+  background: #caa65c;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* ERROR */
+.error {
+  color: #ff8080;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+/* REGISTER */
+.register-text {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.register-text span {
+  color: #caa65c;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.register-text span:hover {
+  text-decoration: underline;
+}
+
+/* BACK HOME */
+.back-home {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.back-home:hover {
+  text-decoration: underline;
+}
