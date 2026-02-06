@@ -67,7 +67,7 @@ export default function Home() {
         <div className="event-cards">
           <div className="card">Sunday Worship – 9:30 AM</div>
           <div className="card">Bible Study – 7:30 PM Wednesday</div>
-          <div className="card">Sunday School – 1:30 PM Friday</div>
+          <div className="card">Sunday School – 1:30 PM Sunday</div>
         </div>
       </section>
 
