@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import Navbar from "../../components/HomeNavbar";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -9,7 +8,23 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
+  useEffect(() => {
+    const onScroll = () => {
+      const navbar = document.querySelector(".navbar");
+      if (!navbar) return;
+
+      if (window.scrollY > 80) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!email || !password) {
@@ -17,36 +32,23 @@ export default function Login() {
       return;
     }
 
-    try {
-      const response = await fetch("http://127.0.0.1:8000/api/auth/login/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        setError("Invalid email or password");
-        return;
-      }
-
-      localStorage.setItem("access_token", data.access);
-      localStorage.setItem("refresh_token", data.refresh);
-
-      navigate("/HomeFeed");
-
-    } catch (err) {
-      setError("Cannot connect to server");
-    }
+    setError("");
+    alert("Login submitted (connect backend next)");
   };
 
   return (
     <>
-      <Navbar />
+      {/* NAVBAR (UNCHANGED) */}
+      <nav className="navbar">
+        <div className="logo">JIU</div>
+        <ul className="nav-links">
+          <li><a onClick={() => navigate("/")}>Home</a></li>
+          <li><a>Member</a></li>
+          <li><a>Location</a></li>
+        </ul>
+      </nav>
 
+      {/* LOGIN SECTION */}
       <section className="login-hero">
         <div className="login-card">
           <h1>Welcome Back</h1>

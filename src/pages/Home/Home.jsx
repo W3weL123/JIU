@@ -1,14 +1,39 @@
-import Navbar from "../../components/HomeNavbar";
-import "./Home.css";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Home.css";
 
 export default function Home() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const onScroll = () => {
+      const navbar = document.querySelector(".navbar");
+      if (!navbar) return;
+
+      if (window.scrollY > 80) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
-      <Navbar />
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <div className="logo">JIU</div>
+        <ul className="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#schedule">Member</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </nav>
 
+      {/* HERO */}
       <section id="home" className="hero">
         <h1>Jesus Is Unity Church</h1>
 
@@ -36,6 +61,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* EVENTS */}
       <section id="events" className="events">
         <h2>Weekly Schedule</h2>
         <div className="event-cards">
@@ -45,6 +71,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FOOTER */}
       <footer className="footer">
         <p>© 2026 Jesus Is Unity Church</p>
       </footer>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
-import Navbar from "../../components/HomeNavbar";
 
 export default function Register() {
   const navigate = useNavigate();
+
   const [step, setStep] = useState(1);
 
   // STEP 1
@@ -82,8 +82,7 @@ export default function Register() {
       .then(data => setBarangays(data));
   }, [city]);
 
-  /* ===== REGISTER TO DJANGO ===== */
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -93,41 +92,31 @@ export default function Register() {
 
     const address = `${street}, ${barangay}, ${city}${isNCR ? "" : ", " + province}`;
 
-    try {
-      const response = await fetch("http://127.0.0.1:8000/api/auth/register/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          full_name: name,
-          birthdate: birthdate,
-          phone: phone,
-          email: email,
-          address: address,
-          password: password,
-        }),
-      });
+    console.log({
+      name,
+      birthdate,
+      phone,
+      email,
+      address,
+      password,
+    });
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        setError(data.error || "Registration failed");
-        return;
-      }
-
-      alert("Registration successful! You can now login.");
-      navigate("/login");
-
-    } catch (err) {
-      setError("Cannot connect to server");
-    }
+    navigate("/login");
   };
 
   return (
     <>
-      <Navbar />
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <div className="logo">JIU</div>
+        <ul className="nav-links">
+          <li><a onClick={() => navigate("/")}>Home</a></li>
+          <li><a>Member</a></li>
+          <li><a>Location</a></li>
+        </ul>
+      </nav>
 
+      {/* REGISTER */}
       <section className="auth-hero">
         <div className="auth-card">
           <h1>Create Account</h1>
@@ -138,6 +127,7 @@ export default function Register() {
           {error && <p className="error">{error}</p>}
 
           <form onSubmit={handleSubmit}>
+            {/* STEP 1 */}
             {step === 1 && (
               <>
                 <input placeholder="Full Name" value={name} onChange={e => setName(e.target.value)} required />
@@ -151,6 +141,7 @@ export default function Register() {
               </>
             )}
 
+            {/* STEP 2 */}
             {step === 2 && (
               <>
                 <select value={region} onChange={e => setRegion(e.target.value)} required>
