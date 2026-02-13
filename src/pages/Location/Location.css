@@ -1,0 +1,85 @@
+/* HERO STYLE SAME AS HOME */
+.location-hero {
+  min-height: 40vh;
+  padding-top: 140px;
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+    url("/images/JIU%20COVER.jpg") center / cover no-repeat;
+  color: white;
+  text-align: center;
+}
+
+.location-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* MAP SECTION */
+.map-section {
+  padding: 80px 60px;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+.address {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* MAP CONTAINER */
+.map-container {
+  width: 85%;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+/* ROUTE INPUT SECTION */
+.route-box {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#origin-input {
+  padding: 12px;
+  width: 280px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.route-box button {
+  padding: 12px 28px;
+  background: #caa65c;
+  color: black;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.route-box button:hover {
+  opacity: 0.85;
+}
+
+/* FOOTER */
+.footer {
+  padding: 30px;
+  text-align: center;
+  background: #000;
+  color: white;
+  font-size: 14px;
+}
